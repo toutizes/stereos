@@ -102,7 +102,7 @@ def epipolar_line(F, np1):
 
 def F_error(F, np0, np1):
   line = np.dot(F, np.array([np1.x, np1.y, 1]))
-  return np.dot(np.transpose([np0.x, np0.y, 1]), line)
+  return abs(np.dot(np.transpose([np0.x, np0.y, 1]), line))
 
 
 def main():
